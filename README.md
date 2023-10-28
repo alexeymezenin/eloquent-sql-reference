@@ -219,7 +219,7 @@ Get users who have support tickets (nested one to many relationships)
 &nbsp;
 
 Get users who has orders with empty comment
-<pre lang=php>User::whereHas('orders', function ($q) { $q->WHERENull('comment'); })->get()</pre><pre lang=sql>SELECT * FROM users WHERE EXISTS (SELECT * FROM orders WHERE users.id = orders.user_id AND comment IS NULL)</pre>
+<pre lang=php>User::whereHas('orders', function ($q) { $q->whereNull('comment'); })->get()</pre><pre lang=sql>SELECT * FROM users WHERE EXISTS (SELECT * FROM orders WHERE users.id = orders.user_id AND comment IS NULL)</pre>
 &nbsp;
 
 Get users who have orders and load their orders
