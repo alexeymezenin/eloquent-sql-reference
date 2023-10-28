@@ -239,7 +239,7 @@ User `belongsToMany` companies, company `belongsToMany` users
 For nested relationships examples another many to many relationship is used. Company `belongsToMany` employees, employee `belongsToMany` companies
 
 Get user's companies
-<pre lang=php>$user->companies< or user->companies()->get()</pre><pre lang=sql>SELECT companies.*, company_user.user_id AS pivot_user_id, company_user.company_id AS pivot_company_id FROM companies INNER JOIN company_user ON companies.id = company_user.company_id WHERE company_user.user_id = 1</pre>
+<pre lang=php>$user->companies or user->companies()->get()</pre><pre lang=sql>SELECT companies.*, company_user.user_id AS pivot_user_id, company_user.company_id AS pivot_company_id FROM companies INNER JOIN company_user ON companies.id = company_user.company_id WHERE company_user.user_id = 1</pre>
 &nbsp;
 
 Get users with companies
