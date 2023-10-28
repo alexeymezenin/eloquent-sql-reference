@@ -243,7 +243,7 @@ Get user's companies
 &nbsp;
 
 Get users with companies
-<pre lang=php>User::with('companies')->get()</pre><pre lang=sql>SELECT companies.*, company_user.user_id AS pivot_user_id, company_user.company_id AS pivot_company_id FROM companies INNER JOIN company_user ON companies.id = company_user.company_id WHERE company_user.user_id IN (1, 2, 3)</pre>
+<pre lang=php>User::with('companies')->get()</pre><pre lang=sql>SELECT * FROM users</pre><pre lang=sql>SELECT companies.*, company_user.user_id AS pivot_user_id, company_user.company_id AS pivot_company_id FROM companies INNER JOIN company_user ON companies.id = company_user.company_id WHERE company_user.user_id IN (1, 2, 3)</pre>
 &nbsp;
 
 Get users with employees (nested many to many relationships)
