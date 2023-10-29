@@ -247,7 +247,11 @@ SELECT * FROM users WHERE EXISTS
 &nbsp;
 
 Get users from Adelaide
-<pre lang=php>User::whereHas('profile', function ($q) { $q->where('city', 'Adelaide'); })->get();</pre>
+```php
+User::whereHas('profile', function ($q) {
+    $q->where('city', 'Adelaide');
+})->get();
+```
 ```sql
 SELECT * FROM users WHERE EXISTS
 (SELECT * FROM profiles WHERE users.id = profiles.user_id AND city = 'Adelaide')
@@ -316,7 +320,11 @@ SELECT * FROM users WHERE EXISTS
 &nbsp;
 
 Get users who has orders with empty comment
-<pre lang=php>User::whereHas('orders', function ($q) { $q->whereNull('comment'); })->get()</pre>
+```php
+User::whereHas('orders', function ($q) {
+    $q->whereNull('comment');
+})->get()
+```
 ```sql
 SELECT * FROM users WHERE EXISTS
     (SELECT * FROM orders WHERE users.id = orders.user_id AND comment IS NULL)
@@ -427,7 +435,11 @@ SELECT * FROM users WHERE EXISTS
 &nbsp;
 
 Get users who have companies with empty description
-<pre lang=php>User::whereHas('companies', function ($q) { $q->whereNull('description'); })->get()</pre>
+```php
+User::whereHas('companies', function ($q) {
+    $q->whereNull('description');
+})->get()
+```
 ```sql
 SELECT * FROM users WHERE EXISTS
     (SELECT * FROM companies
