@@ -178,7 +178,7 @@ Destroy with soft deletes on
 <pre lang=php>User::destroy(1, 2, 3)</pre>
 ```sql
 SELECT * FROM users WHERE id IN (1, 2, 3) AND users.deleted_at IS NULL
-UPDATE usersSET deleted_at = '2023-10-25 12:54:53', users.updated_at = '2023-10-25 12:54:53' WHERE id = 1
+UPDATE users SET deleted_at = '2023-10-25 12:54:53', users.updated_at = '2023-10-25 12:54:53' WHERE id = 1
 UPDATE users SET deleted_at = '2023-10-25 12:54:53', users.updated_at = '2023-10-25 12:54:53' WHERE id = 2
 UPDATE users SET deleted_at = '2023-10-25 12:54:53', users.updated_at = '2023-10-25 12:54:53' WHERE id = 3
 ```
