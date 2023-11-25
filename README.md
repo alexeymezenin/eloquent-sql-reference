@@ -398,7 +398,7 @@ SELECT companies.*, company_user.user_id AS pivot_user_id, company_user.company_
 &nbsp;
 
 Load companies and employees for user (nested many to many relationships)
-<pre lang=php>$user->load('companies. employees')</pre>
+<pre lang=php>$user->load('companies.employees')</pre>
 ```sql
 SELECT companies.*, company_user.user_id AS pivot_user_id, company_user.company_id AS pivot_company_id
     FROM companies
