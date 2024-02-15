@@ -122,7 +122,7 @@ UPDATE users SET type = 'some_type', users.updated_at = '2023-10-04 15:36:44'
 Update single row
 <pre lang=php>$user->update(['name' => 'John', 'email' => 'john@smith.com'])</pre>
 ```sql
-UPDATE users SET name = 'John', users.updated_at = '2023-10-04 16:12:30'
+UPDATE users SET name = 'John', email = 'john@smith.com', users.updated_at = '2023-10-04 16:12:30'
     WHERE id = 1
 ```
 &nbsp;
